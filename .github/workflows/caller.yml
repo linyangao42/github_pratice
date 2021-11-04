@@ -10,5 +10,3 @@ jobs:
     uses: linyangao42/github_pratice/.github/workflows/workflow-B.yml@linyangao42-patch-1
     with:
       username: mona
-    secrets:
-      token: ${{ secrets.TOKEN }}
