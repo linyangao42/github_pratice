@@ -3,7 +3,7 @@ name: Call a reusable workflow
 on:
   pull_request:
     branches:
-      - test
+      - main
 
 jobs:
   call-workflow-passing-data:
