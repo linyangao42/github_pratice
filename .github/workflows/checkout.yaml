@@ -1,6 +1,7 @@
 name: checkout-workfile
 on:
-  branches:
+  push:
+    branches:
       - pull-request-test
 
 env:
