@@ -2,7 +2,7 @@ name: checkout-workfile
 on: push
 
 env:
-  MY_ENV_VAR: ${{GITHUB_WORKSPACE}}
+  MY_ENV_VAR: ${{github.GITHUB_WORKSPACE}}
   
 jobs:
   checkout-job:
