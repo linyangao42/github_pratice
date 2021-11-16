@@ -15,4 +15,4 @@ jobs:
       - run: echo ${{github.event.pull_request.head.ref}}
       - run: echo "lin"
       - run: echo "${{env.MY_ENV_VAR}}"
-      - run: ls -a
+      - run: ls -a .github/workflows/
