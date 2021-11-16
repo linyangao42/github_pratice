@@ -1,5 +1,11 @@
 name: checkout-workfile
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 env:
   MY_ENV_VAR: ${{github.GITHUB_WORKSPACE}}
