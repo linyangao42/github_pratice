@@ -1,1 +1,11 @@
+name: checkout-workfile
+on: push
 
+jobs:
+  checkout-job:
+    name: checkout-job-name
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: git status
+      - run: git branch
