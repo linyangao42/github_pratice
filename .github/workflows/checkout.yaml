@@ -1,8 +1,8 @@
 name: checkout-workfile
 on:
-  push:
+  pull_request:
     branches:
-      - pull-request-test
+      - main
 
 env:
   MY_ENV_VAR: ${{github.GITHUB_WORKSPACE}}
