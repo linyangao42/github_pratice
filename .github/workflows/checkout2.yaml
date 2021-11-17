@@ -6,7 +6,7 @@ on:
   #    - pull-request-test
   pull_request:
     branches:
-      - pull-request-test
+      - pull-request-test2
 
 
 env:
