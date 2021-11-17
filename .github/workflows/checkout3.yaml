@@ -1,0 +1,27 @@
+name: checkout-workfile3
+
+on: 
+  #push:
+  #  branches:
+  #    - pull-request-test
+  pull_request:
+    branches:
+      - pull-request-test3
+
+
+env:
+  MY_ENV_VAR: ${{github.GITHUB_WORKSPACE}}
+  
+jobs:
+  checkout-job:
+    name: checkout-job-name
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: git status
+      - run: git branch
+      - run: echo ${{github.event.pull_request.head.ref}}
+      - run: echo "lin"
+      - run: echo "${{env.MY_ENV_VAR}}"
+      - run: ls -a .github/workflows/
+      - run: git rev-parse --short HEAD
