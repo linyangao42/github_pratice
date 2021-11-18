@@ -18,9 +18,10 @@ jobs:
       - run: git status
       - run: git branch
       - run: echo ${{github.event.pull_request.head.ref}}
-      - run: |
-          temp = ${{ github.event.pull_request.head.sha }}
-          echo ${temp:0:7}
+      - run: echo ${$temp:0:7}
+        env:
+          temp: ${{ github.event.pull_request.head.sha }}
+          
       - run: echo "lin"
       - run: echo "${{env.MY_ENV_VAR}}"
       - run: ls -a
