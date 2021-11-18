@@ -25,4 +25,5 @@ jobs:
       - run: git version
       - run: echo "$GITHUB_SHA"
       - run: echo "$GITHUB_HEAD_REF"
+      - run: echo ${{ github.sha }}
       - run: git log
