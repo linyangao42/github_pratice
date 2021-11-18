@@ -23,3 +23,5 @@ jobs:
       - run: ls -a
       - run: git rev-parse --short HEAD
       - run: git version
+      - run: echo "$GITHUB_SHA"
+      - run: echo "$GITHUB_HEAD_REF"
