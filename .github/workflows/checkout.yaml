@@ -18,7 +18,7 @@ jobs:
       - run: git status
       - run: git branch
       - run: echo ${{github.event.pull_request.head.ref}}
-      - run: echo $temp:0:7
+      - run: echo ${temp:0:7}
         env:
           temp: ${{ github.event.pull_request.head.sha }}
           
