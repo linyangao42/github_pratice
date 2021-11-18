@@ -21,7 +21,7 @@ jobs:
       - run: echo "lin"
       - run: echo "${{env.MY_ENV_VAR}}"
       - run: ls -a
-      - run: git rev-parse --short HEAD
+      - run: git rev-parse --short ${{ github.ref }}
       - run: git version
       - run: echo "$GITHUB_SHA"
       - run: echo "$GITHUB_HEAD_REF"
