@@ -22,3 +22,4 @@ jobs:
       - run: echo "${{env.MY_ENV_VAR}}"
       - run: ls -a
       - run: git rev-parse --short HEAD
+      - run: git version
