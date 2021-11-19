@@ -45,5 +45,5 @@ jobs:
               repo: context.repo.repo,
               body: '👋 Thanks for reporting!' + $temp
             })
-          env:
-            temp: TEST
+        env:
+          temp: TEST
