@@ -38,12 +38,11 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const temp = Lin
             github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for reporting! ${{temp}}'
+              body: '👋 Thanks for reporting! ${{github.event.pull_request.head.sha}}'
             })
         env:
           temp: TEST
