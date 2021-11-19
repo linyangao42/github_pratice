@@ -39,9 +39,9 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.issues.createComment({
-              short_commit_id: ${{ github.event.pull_request.head.sha }},
+              #short_commit_id: ${{ github.event.pull_request.head.sha }},
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for reporting!' + '${short_commit_id}'
+              body: '👋 Thanks for reporting!' + ${{ github.event.pull_request.head.sha }}
             })
