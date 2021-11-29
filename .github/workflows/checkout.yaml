@@ -5,6 +5,9 @@ on:
       - main
     #paths:
      # .github/workflows/**
+defaults:
+  run:
+    working-directory: .github/workflows
 
 env:
   MY_ENV_VAR: ${{github.GITHUB_WORKSPACE}}
