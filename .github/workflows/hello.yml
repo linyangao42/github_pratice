@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, World!"
-      - run: echo $BRANCH_NAME
+      - run: echo ${BRANCH_NAME}
         env:
           BRANCH_NAME: ${{github.head_ref}}
