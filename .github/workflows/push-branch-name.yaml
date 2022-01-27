@@ -4,9 +4,8 @@ on:
 jobs:
   sample:
     runs-on: ubuntu-latest
+    if: github.event.pull_request
     steps:
-      - run: echo ${{ github.ref }}
-        
-      - run: echo "${GITHUB_REF_CONTEXT#refs/heads/}"
-    env:
-      GITHUB_REF_CONTEXT: ${{ github.ref }}
+      - run: echo "${GITHUB_REF#refs/heads/}" # PRの番号が取得されてしまいます
+      - run: echo "${GITHUB_HEAD_REF}"
+      - run: echo "${{ github.ref }}"
