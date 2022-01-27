@@ -5,8 +5,8 @@ jobs:
   sample:
     runs-on: ubuntu-latest
     steps:
-      - run: echo true
-        if: ${GITHUB_REF#refs/heads/} == 'test'
+      - run: echo ${{ github.ref }}
+        
       - run: echo "${GITHUB_REF_CONTEXT#refs/heads/}"
     env:
       GITHUB_REF_CONTEXT: ${{ github.ref }}
