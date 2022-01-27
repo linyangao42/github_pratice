@@ -5,7 +5,7 @@ jobs:
   sample:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "push.head_branch"
+      - run: echo push.head_branch
       - run: echo "${GITHUB_REF_CONTEXT#refs/heads/}"
     env:
       GITHUB_REF_CONTEXT: ${{ github.ref }}
