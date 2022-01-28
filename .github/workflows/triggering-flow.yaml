@@ -1,0 +1,10 @@
+name: Trigger
+on:
+  push:
+    - main
+
+jobs:
+  tirgger-job:
+    runs-on: ubuntu-latest
+    steps:
+      -run: echo "trigger flow"
