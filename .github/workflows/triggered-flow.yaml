@@ -1,0 +1,12 @@
+name: triggerred
+on:
+  workflow_run: [Trigge]
+  branches:
+    - main
+  types:
+    - completed
+jobs:
+  triggered-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "triggerred flow"
