@@ -3,7 +3,7 @@ on:
   workflow_run: 
     workflows: [Trigger]
     branches:
-      - 'workflow-run-test'
+      - workflow-run-test
     types:
       #- completed
       - requested
