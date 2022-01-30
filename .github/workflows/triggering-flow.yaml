@@ -2,7 +2,7 @@ name: Trigger
 on:
   push:
     branches:
-      - main
+      - workflow-run-test
 jobs:
   tirgger-job:
     runs-on: ubuntu-latest
