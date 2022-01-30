@@ -9,4 +9,4 @@ jobs:
     steps:
       - run: echo "trigger flow"
       - run: echo "branch"
-        if: github.ref == refs/heads/main
+        if: github.ref == 'refs/heads/main'
