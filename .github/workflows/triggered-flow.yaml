@@ -1,12 +1,12 @@
 name: triggerred
 on:
   workflow_run: 
-    workflows: [Trigge]
+    workflows: [Trigger]
     branches:
       - main
     types:
-      #- completed
-      - requested
+      - completed
+     # - requested
 jobs:
   triggered-job:
     runs-on: ubuntu-latest
