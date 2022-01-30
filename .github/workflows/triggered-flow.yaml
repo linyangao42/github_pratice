@@ -5,8 +5,8 @@ on:
     branches:
       - workflow-run-test
     types:
-      - completed
-      #- requested
+      #- completed
+      - requested
 jobs:
   triggered-job:
     runs-on: ubuntu-latest
