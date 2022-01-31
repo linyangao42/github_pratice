@@ -6,6 +6,7 @@ on:
       - main
     types:
       - completed
+      
       #- requested
 jobs:
   triggered-job:
