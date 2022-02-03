@@ -4,7 +4,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-    input:
+    inputs:
       tagName:
         description: name of tag
         required: true
