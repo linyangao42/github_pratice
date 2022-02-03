@@ -15,7 +15,7 @@ jobs:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, World! in default branch."
+      - run: echo "Hello, World! in branch which is not default branch!"
       - run: echo "${{github.ref}}"
       - name: set tag name
         id: set_tag_name
