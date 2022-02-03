@@ -23,10 +23,10 @@ jobs:
         with:
           script: |
             let tagName='latest';
-            let inputs=context.payload.inputs || {};
+            //let inputs=context.payload.inputs || {};
             
-            if(inputs.tagName) {
-              tagName=inputs.tagName;
+            if(context.payload.inputs.tagName) {
+              tagName=context.payload.inputs.tagName;
             }
             core.setOutput('tagName',tagName)
       - run: echo "${{ steps.set_tag_name.outputs.tagName }}"
