@@ -24,6 +24,7 @@ jobs:
           script: |
             let tagName='latest';
             let inputs=context.payload.tagName || {};
+            
             if(inputs.tagName) {
               tagName=inputs.tagName;
             }
