@@ -23,8 +23,9 @@ jobs:
         with:
           script: |
             let tagName='latest';
-            if(context.payload.inputs.tagName) {
-              tagName=context.payload.inputs.tagName;
+            let inputs=context.payload.inputs.tagName || {};
+            if(inputs.tagName) {
+              tagName=inputs.tagName;
             }
             core.setOutput('tagName',tagName)
       - run: echo "${{ steps.set_tag_name.outputs.tagName }}"
