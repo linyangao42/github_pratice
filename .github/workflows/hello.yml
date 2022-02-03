@@ -23,7 +23,7 @@ jobs:
         with:
           script: |
             let tagName='latest';
-            let inputs=context.payload. || {};
+            let inputs=context.payload.inputs || {};
             
             if(inputs.tagName) {
               tagName=inputs.tagName;
