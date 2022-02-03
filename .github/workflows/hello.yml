@@ -1,10 +1,31 @@
 name: Hello, World!
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    input:
+      tagName:
+        description: name of tag
+        require: true
+        default: latest
 
 jobs:
   build:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, World! in branch which is not default branch!"
+      - run: echo "Hello, World! in default branch."
       - run: echo "${{github.ref}}"
+      - name: set tag name
+        id: set_tag_name
+        uses: actions/github-script@v3
+        with:
+          script: |
+            let tagName='latest';
+            let inputs=context.payload.tagName || {};
+            if(inputs.tagName) {
+              tagName=inputs.tagName;
+            }
+            core.setOutput('tagName',tagName)
+      - run: echo "${{ steps.set_tag_name.outputs.tagName }}"
