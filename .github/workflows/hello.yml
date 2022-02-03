@@ -4,18 +4,18 @@ on:
     branches:
       - main
   workflow_dispatch:
-    input:
+    inputs:
       tagName:
         description: name of tag
-        require: true
-        default: latest
+        required: true
+        default: 'latest'
 
 jobs:
   build:
     name: Greeting
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, World! in branch which is not default branch!"
+      - run: echo "Hello, World! in default branch."
       - run: echo "${{github.ref}}"
       - name: set tag name
         id: set_tag_name
@@ -23,7 +23,8 @@ jobs:
         with:
           script: |
             let tagName='latest';
-            let inputs=context.payload.tagName || {};
+            let inputs=context.payload.inputs || {};
+            
             if(inputs.tagName) {
               tagName=inputs.tagName;
             }
