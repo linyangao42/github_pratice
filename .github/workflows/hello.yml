@@ -7,8 +7,8 @@ on:
     input:
       tagName:
         description: name of tag
-        require: true
-        default: latest
+        required: true
+        default: 'latest'
 
 jobs:
   build:
