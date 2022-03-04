@@ -1,3 +1,4 @@
+name: job of workflow_dispatch_test
 on:
   workflow_dispatch:
     inputs:
@@ -14,10 +15,7 @@ on:
         description: 'Test scenario tags'
         required: false 
         type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true 
+      
 
 jobs:
   print-tag:
