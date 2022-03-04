@@ -15,7 +15,6 @@ on:
         description: 'Test scenario tags'
         required: false 
         type: boolean
-        default: 'true'
 
 jobs:
   print-tag:
