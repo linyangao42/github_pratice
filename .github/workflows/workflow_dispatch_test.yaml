@@ -13,7 +13,7 @@ on:
         - debug 
       tags:
         description: 'Test scenario tags'
-        required: false 
+        required: true 
         type: boolean
 
 jobs:
