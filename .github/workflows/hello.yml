@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - push-20220404
   workflow_dispatch:
     inputs:
       tagName:
