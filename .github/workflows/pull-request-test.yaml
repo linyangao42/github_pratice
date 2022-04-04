@@ -2,7 +2,7 @@ name: pull-request-20220404
 on:
   pull_request:
     branches:
-      - main
+      - pull-test1
     #paths:
      # .github/workflows/**
 
