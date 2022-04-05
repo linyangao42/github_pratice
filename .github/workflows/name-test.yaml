@@ -1,0 +1,12 @@
+name: ${{ env.date:yyyyMMdd }}${{ env.rev:.r }}
+on: 
+  push:
+    branches:
+      - push-20220404
+  
+jobs:
+  build:
+    name: push-test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello,name test."
