@@ -1,9 +1,9 @@
 name: checkout-test-20220406
 on: push
 
-defaults:
-  run:
-    working-directory: test
+#defaults:
+#  run:
+#    working-directory: test
   
 jobs:
   checkout-job:
@@ -12,6 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          cd ..
+          zip -qq -r
           ls
       - run: echo "lin"
