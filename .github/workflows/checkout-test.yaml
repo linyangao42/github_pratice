@@ -1,0 +1,15 @@
+name: checkout-test-20220406
+on: push
+
+#defaults:
+#  run:
+#    working-directory: 
+  
+jobs:
+  checkout-job:
+    name: checkout-test-20220406-job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls
+      - run: echo "lin"
