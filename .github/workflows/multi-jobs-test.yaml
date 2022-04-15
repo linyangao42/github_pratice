@@ -21,7 +21,8 @@ jobs:
         with:
           script: |
             let where_to_deploy = 'qa';
-            if(${{ github.event.inputs.where_to_deploy }})
+            if(${{ github.event.inputs.where_to_deploy }}){
               where_to_deploy = github.event.inputs.where_to_deploy;
+            }
             core.setOutput('aa',where_to_deploy);
       - run: echo ${{ steps.check.outputs.aa }}
