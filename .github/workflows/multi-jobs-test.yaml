@@ -1,7 +1,8 @@
 name: multi-jobs-test-20220415
-on: push:
-  branches:
-    - multiple-jobs-test-20220415
+on: 
+  push:
+    branches:
+      - multiple-jobs-test-20220415
   workflow_dispatch:
     inputs:
       where_to_deploy:
