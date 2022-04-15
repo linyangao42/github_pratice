@@ -1,0 +1,26 @@
+name: multi-jobs-test-20220415
+on: push:
+  branches:
+    - multiple-jobs-test-20220415
+  workflow_dispatch:
+    inputs:
+      where_to_deploy:
+        description: name of environment
+        required: true
+        default: 'qa'
+
+jobs:
+  pre-check:
+    name: pre-check input
+    runs-on: ubuntu-latest
+    steps:
+      - name: prepare
+        id: check
+        uses: actions/github-script@v3
+        with:
+          script: |
+            let where_to_deploy = 'qa';
+            if(${{ github.event.inputs.where_to_deploy }})
+              where_to_deploy = github.event.inputs.where_to_deploy;
+            core.setOutput('aa',where_to_deploy);
+      - run: echo ${{ steps.check.outputs.aa }}
