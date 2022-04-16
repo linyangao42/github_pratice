@@ -27,11 +27,13 @@ jobs:
             console.log(context.payload.inputs);
             console.log("---2----");
             console.log({});
+            console.log("---3----");
+            console.log(context.payload.inputs || {});
             inputs = context.payload.inputs || {};
             if (inputs.where_to_deploy) {
               where_to_deploy = inputs.where_to_deploy;
             }
-            console.log("---3----");
+            console.log("---4----");
             console.log(where_to_deploy);
             core.setOutput('aa', where_to_deploy);
       - run: echo ${{ steps.check.outputs.aa }}
