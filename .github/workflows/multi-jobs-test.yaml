@@ -17,7 +17,7 @@ jobs:
     steps:
       - run: |
           echo ${{ github.event.inputs.where_to_deploy }}
-          echo ${{ context.payload.inputs.where_to_deploy }}
+          echo context.payload.inputs.where_to_deploy
       - name: prepare
         id: check
         uses: actions/github-script@v3
