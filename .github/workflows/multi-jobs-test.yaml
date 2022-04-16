@@ -17,12 +17,14 @@ jobs:
     steps:
       - run: |
           echo ${{ github.event.inputs.where_to_deploy }}
-          echo context.payload.inputs.where_to_deploy
       - name: prepare
         id: check
         uses: actions/github-script@v3
         with:
           script: |
             let where_to_deploy = 'qa';
+            if (context.payload.inputs.where_to_deploy) {
+              where_to_deploy = context.payload.inputs.where_to_deploy;
+            }
             core.setOutput('aa', where_to_deploy);
       - run: echo ${{ steps.check.outputs.aa }}
