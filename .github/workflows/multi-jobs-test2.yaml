@@ -16,7 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo ${{ github.event.inputs.where_to_deploy }}
+          #echo ${{ github.event.inputs.where_to_deploy }}
+          echo 'start'
       - name: prepare
         id: check
         uses: actions/github-script@v3
