@@ -34,7 +34,7 @@ jobs:
             
             core.setOutput('where_to_deploy', where_to_deploy);
       - id: pass-paramater
-        run: echo "::set-output name=test::${{where_to_deploy}}"
+        run: echo "::set-output name=test::${{steps.check.outputs.where_to_deploy}}"
         
   check:
     name: check input
