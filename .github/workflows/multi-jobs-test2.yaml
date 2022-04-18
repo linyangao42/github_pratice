@@ -14,6 +14,8 @@ jobs:
   pre-check:
     name: pre-check input
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.pass-paramater.outputs.test }}
     steps:
       - run: |
           echo ${{ github.event.inputs.where_to_deploy }}
@@ -31,4 +33,12 @@ jobs:
             }
             
             core.setOutput('where_to_deploy', where_to_deploy);
-      - run: echo ${{ steps.check.outputs.where_to_deploy }}
+      - id: pass-paramater
+        run: echo "::set-output name=test::${{where_to_deploy}}"
+        
+  check:
+    name: check input
+    runs-on: ubuntu-latest
+    needs: pre-check
+    steps:
+      - run: echo ${{needs.pre-check.outputs.output1}}
