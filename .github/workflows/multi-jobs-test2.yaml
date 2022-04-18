@@ -24,6 +24,7 @@ jobs:
         with:
           script: |
             let where_to_deploy = 'qa';
+            console.log(context.payload);
             
             core.setOutput('aa', where_to_deploy);
       - run: echo ${{ steps.check.outputs.aa }}
