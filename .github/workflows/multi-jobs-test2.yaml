@@ -23,7 +23,7 @@ jobs:
         with:
           script: |
             let where_to_deploy = 'qa';
-            console.log("---1----");
+            #console.log("---1----");
             #console.log(context.payload);
             #console.log("---2----");
             #console.log({});
