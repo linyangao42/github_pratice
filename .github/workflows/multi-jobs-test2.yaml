@@ -24,8 +24,8 @@ jobs:
           script: |
             let where_to_deploy = 'qa';
             
-            #console.log("---1----");
-            #console.log(context.payload.inputs);
+            console.log("---1----");
+            console.log(context.payload);
             #console.log("---2----");
             #console.log({});
             #console.log("---3----");
