@@ -26,6 +26,9 @@ jobs:
             let where_to_deploy = 'qa';
             console.log("---1----");
             console.log(context.payload.inputs);
+            if(context.payload.inputs){
+              where_to_deploy = 'lin-test';
+            }
             
             core.setOutput('aa', where_to_deploy);
       - run: echo ${{ steps.check.outputs.aa }}
