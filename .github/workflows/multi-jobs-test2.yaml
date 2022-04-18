@@ -36,7 +36,7 @@ jobs:
             #  where_to_deploy = context.payload.inputs.where_to_deploy;
               #where_to_deploy = 'lin-test';
             #}
-            console.log("---5----");
+            #console.log("---5----");
             console.log(where_to_deploy);
             core.setOutput('aa', where_to_deploy);
       - run: echo ${{ steps.check.outputs.aa }}
