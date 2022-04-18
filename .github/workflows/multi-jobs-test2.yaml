@@ -35,7 +35,8 @@ jobs:
             #console.log(inputs.where_to_deploy);
             
             if (context.payload.inputs) {
-              where_to_deploy = context.payload.inputs.where_to_deploy;
+              #where_to_deploy = context.payload.inputs.where_to_deploy;
+              where_to_deploy = 'lin-test'
             }
             console.log("---5----");
             console.log(where_to_deploy);
