@@ -27,7 +27,7 @@ jobs:
             console.log("---1----");
             console.log(context.payload.inputs);
             if(context.payload.inputs){
-              where_to_deploy = 'lin-test';
+              where_to_deploy = context.payload.inputs.where_to_deploy;
             }
             
             core.setOutput('aa', where_to_deploy);
