@@ -39,7 +39,7 @@ jobs:
   check:
     name: check input
     runs-on: ubuntu-latest
-    #needs: pre-check
+    needs: pre-check
     steps:
-      #- run: echo ${{needs.pre-check.outputs.where_to_deploy}}
+      - run: echo ${{needs.pre-check.outputs.where_to_deploy}}
       - run: echo hello
