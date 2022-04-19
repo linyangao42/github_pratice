@@ -25,7 +25,7 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            let where_to_deploy = 'qa';
+            let where_to_deploy = qa;
             console.log("---1----");
             console.log(context.payload.inputs);
             if(context.payload.inputs){
