@@ -42,4 +42,4 @@ jobs:
     #needs: pre-check
     steps:
       #- run: echo ${{needs.pre-check.outputs.where_to_deploy}}
-      - run: echo 'hello'
+      - run: echo hello
