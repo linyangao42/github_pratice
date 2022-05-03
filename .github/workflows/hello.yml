@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, World! in branch which is not default branch!"
+      - run: echo ${{ github.event.inputs.test_input }}
       - run: echo "${{github.ref}}"
       - name: set tag name
         id: set_tag_name
