@@ -11,7 +11,7 @@ on:
         default: 'latest'
       test_input:
         description: input test
-        required: false
+        required: true
         type: boolean
 
 jobs:
