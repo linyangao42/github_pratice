@@ -9,6 +9,10 @@ on:
         description: name of tag
         required: true
         default: 'latest'
+      test_input:
+        description: input test
+        required: false
+        default: 'input something'
 
 jobs:
   build:
