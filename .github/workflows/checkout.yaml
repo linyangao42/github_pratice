@@ -5,6 +5,9 @@ on:
       - main
     #paths:
      # .github/workflows/**
+defaults:
+  run:
+    working-directory: .github/workflows
 
 env:
   MY_ENV_VAR: ${{github.GITHUB_WORKSPACE}}
@@ -14,11 +17,43 @@ jobs:
     name: checkout-job-name
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      - run: pwd
+      - run: echo ${GITHUB_REF#refs/heads/}
       - run: git status
       - run: git branch
       - run: echo ${{github.event.pull_request.head.ref}}
+      - run: echo ${temp:0:7}
+        env:
+          temp: ${{ github.event.pull_request.head.sha }}
+          
+      - run: echo ${{ github.event.pull_request.head.sha }}
+          
       - run: echo "lin"
       - run: echo "${{env.MY_ENV_VAR}}"
       - run: ls -a
       - run: git rev-parse --short HEAD
+      - run: git version
+      - run: echo "$GITHUB_SHA"
+      - run: echo "$GITHUB_HEAD_REF"
+      - run: echo ${{ github.sha }}
+      - run: git log
+      
+      - name: Set short commit id
+        id: short_commit_id
+        run: echo "::set-output name=sha_short::$(echo ${temp:0:7})"
+        env:
+          temp: ${{ github.event.pull_request.head.sha }}
+        
+      - uses: actions/github-script@v3
+        env:
+          temp: ${{github.event.pull_request.head.sha}}
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!' + '${{steps.short_commit_id.outputs.sha_short}}'
+            })

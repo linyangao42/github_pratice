@@ -1,0 +1,19 @@
+name: Test2
+on: push
+
+jobs:
+  test2:
+    runs-on: ubuntu-latest
+    name: test2
+    
+    steps:
+    - name: Create Git tag for PR
+      uses: actions/github-script@v3
+      with:
+        script: |
+          github.git.createRef({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref: "refs/tags/test2",
+            sha: context.sha
+          })
