@@ -2,10 +2,10 @@ name: triggerred
 on:
   workflow_run: 
     workflows: [Trigger]
-    #branches:
-    #  - main
-    #types:
-    #  - completed
+    branches:
+      - main
+    types:
+      - completed
       
       #- requested
 jobs:
