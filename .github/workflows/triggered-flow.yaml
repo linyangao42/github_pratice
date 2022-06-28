@@ -2,14 +2,18 @@ name: triggerred
 on:
   workflow_run: 
     workflows: [Trigger]
-    #branches:
+    branches:
       #- main
-      #- workflow-run-test
-    #types:
-    #  - completed    
+      - workflow-run-test
+    types:
+      - completed    
       #- requested
 jobs:
   triggered-job:
     runs-on: ubuntu-latest
     steps:
       - run: echo "triggerred flow"
+      - uses: actions/checkout@v2.3.2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: cat lin-test1.txt
