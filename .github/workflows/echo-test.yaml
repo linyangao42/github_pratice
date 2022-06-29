@@ -1,0 +1,13 @@
+name: echo test
+on:  push
+   
+jobs:
+  tirgger-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          touch test.env.json
+          echo "{" >> test.env.json
+          echo hello >> test.env.json
+          cat test.env.json
+
