@@ -8,7 +8,7 @@ jobs:
       - run: |
           touch test.env.json
           echo { >> test.env.json
-          echo "username": "lin" >> test.env.json
+          echo "username": "lin", >> test.env.json
           echo "password": "pass" >> test.env.json
           echo } >> test.env.json
           #echo hello >> test.env.json
