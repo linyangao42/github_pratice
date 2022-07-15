@@ -1,6 +1,6 @@
 name: push-and-request-test
 
-on: [push,pull_request]
+on: [pull_request]
 
 jobs:
   push-pullrequest-job-id:
