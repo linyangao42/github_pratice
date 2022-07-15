@@ -1,0 +1,10 @@
+name: push-and-request-test
+
+on: [push,pull_request]
+
+jobs:
+  push-pullrequest-job-id:
+    name: push-pullrequest-job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "lin"
